@@ -32,6 +32,11 @@ body {
   background-color: hsl(0, 0%, 100%);
 }
 
+.contact-form h3 {
+  color: hsl(187, 24%, 22%);
+  font-weight: 700;
+}
+
 .contact-form .btn {
   background-color: hsl(169, 82%, 27%);
   color: hsl(0, 0%, 100%);

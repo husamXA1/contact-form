@@ -3,7 +3,7 @@ import SuccessMessage from './SuccessMessage'
 export default function ContactForm() {
     return (
         <div className="contact-form container p-4 rounded-3 my-5">
-            <h3>Contact Us</h3>
+            <h2>Contact Us</h2>
 
             <label htmlFor="fname">First Name</label>
             <input type="text" name="fname" id="fname" />

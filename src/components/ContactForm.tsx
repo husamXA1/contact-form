@@ -37,10 +37,6 @@ export default function ContactForm() {
             Message Sent!
             Thanks for completing the form. We'll be in touch soon!
 
-            <div className="attribution">
-                Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
-                Coded by <a href="#">Husam</a>.
-            </div>
         </div>
     )
 }

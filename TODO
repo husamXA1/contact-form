@@ -1,0 +1,9 @@
+Handle the inputs using React states.
+Fix the required astrisk.
+Add border radius to the input fields.
+Handle the error messages.
+Fix the margins and paddings.
+Handle success message.
+Style hover and active states.
+Handle accessibility with keyboard only.
+Handle accessibility for screen readers.

@@ -1,0 +1,38 @@
+/* Imports */
+@font-face {
+  font-family: "Karla";
+  src: url('./assets/fonts/Karla-VariableFont_wght.ttf');
+}
+
+/* General Rules */
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: hsl(148, 38%, 91%);
+  font-family: "Karla", sans-serif;
+}
+
+/* Contact Form */
+.contact-form {
+  max-width: 800px;
+  background-color: hsl(0, 0%, 100%);
+  margin-top: 100px;
+}
+
+/* Attribution */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}

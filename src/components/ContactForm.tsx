@@ -1,6 +1,6 @@
 export default function ContactForm() {
     return (
-        <form className="contact-form container p-4 rounded-3">
+        <div className="contact-form container p-4 rounded-3">
             <h3>Contact Us</h3>
 
             <label htmlFor="fname">First Name</label>
@@ -32,7 +32,7 @@ export default function ContactForm() {
             <label htmlFor="consent">I consent to being contacted by the team</label>
             To submit this form, please consent to being contacted
 
-            <button className="btn btn-primary w-100">Submit</button>
+            <button className="btn w-100">Submit</button>
 
             Message Sent!
             Thanks for completing the form. We'll be in touch soon!
@@ -41,6 +41,6 @@ export default function ContactForm() {
                 Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
                 Coded by <a href="#">Husam</a>.
             </div>
-        </form>
+        </div>
     )
 }

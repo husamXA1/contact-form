@@ -20,11 +20,22 @@ body {
   font-family: "Karla", sans-serif;
 }
 
+/* .btn {
+  outline: none;
+  border: none;
+} */
+
 /* Contact Form */
 .contact-form {
+  width: 90%;
   max-width: 800px;
   background-color: hsl(0, 0%, 100%);
   margin-top: 100px;
+}
+
+.contact-form .btn {
+  background-color: hsl(169, 82%, 27%);
+  color: hsl(0, 0%, 100%);
 }
 
 /* Attribution */

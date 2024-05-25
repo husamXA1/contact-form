@@ -26,6 +26,16 @@ label::after {
   margin-left: 0.5em;
 }
 
+input[type=text],
+input[type=email] {
+  width: 100%;
+  padding: 0.4em 0.5em;
+}
+
+textarea {
+  resize: none;
+}
+
 /* Contact Form */
 .contact-form {
   width: 90%;

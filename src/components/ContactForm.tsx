@@ -5,13 +5,15 @@ export default function ContactForm() {
         <div className="contact-form container p-4 rounded-4 my-5">
             <h2>Contact Us</h2>
 
-            <label htmlFor="fname">First Name</label>
-            <input type="text" name="fname" id="fname" />
-            This field is required
+            <div className="fullname d-md-flex">
+                <label htmlFor="fname">First Name</label>
+                <input type="text" name="fname" id="fname" />
+                This field is required
 
-            <label htmlFor="lname">Last Name</label>
-            <input type="text" name="lname" id="lname" />
-            This field is required
+                <label htmlFor="lname">Last Name</label>
+                <input type="text" name="lname" id="lname" />
+                This field is required
+            </div>
 
             <label htmlFor="email">Email Address</label>
             <input type="email" name="email" id="email" />

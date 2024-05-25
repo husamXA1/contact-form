@@ -20,6 +20,12 @@ body {
   font-family: "Karla", sans-serif;
 }
 
+label::after {
+  content: '*';
+  color: hsl(169, 82%, 27%);
+  margin-left: 0.5em;
+}
+
 /* .btn {
   outline: none;
   border: none;

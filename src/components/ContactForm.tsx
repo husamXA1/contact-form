@@ -1,3 +1,5 @@
+import SuccessMessage from './SuccessMessage'
+
 export default function ContactForm() {
     return (
         <div className="contact-form container p-4 rounded-3 my-5">
@@ -34,8 +36,7 @@ export default function ContactForm() {
 
             <button className="btn w-100">Submit</button>
 
-            Message Sent!
-            Thanks for completing the form. We'll be in touch soon!
+            { false && <SuccessMessage /> }
 
         </div>
     )

@@ -1,6 +1,6 @@
 export default function ContactForm() {
     return (
-        <div className="contact-form container p-4 rounded-3">
+        <div className="contact-form container p-4 rounded-3 my-5">
             <h3>Contact Us</h3>
 
             <label htmlFor="fname">First Name</label>

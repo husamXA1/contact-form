@@ -1,6 +1,16 @@
 import SuccessMessage from './SuccessMessage'
+import { useState } from 'react'
 
 export default function ContactForm() {
+    const [data, setData] = useState({
+        fname: "",
+        lname: "",
+        email: "",
+        qtype: "",
+        message: "",
+        consent: false
+    });
+
     return (
         <div className="contact-form container p-4 rounded-4 my-5">
             <h2>Contact Us</h2>
@@ -8,19 +18,19 @@ export default function ContactForm() {
             <div className="fullname d-sm-flex gap-3">
                 <div className="fname">
                     <label htmlFor="fname">First Name</label>
-                    <input type="text" name="fname" id="fname" />
+                    <input type="text" name="fname" id="fname" value={data.fname} onChange={(e) => { setData(pendingData => ({ ...pendingData, fname: e.target.value })) }} />
                     This field is required
                 </div>
                 <div className="lname">
                     <label htmlFor="lname">Last Name</label>
-                    <input type="text" name="lname" id="lname" />
+                    <input type="text" name="lname" id="lname" value={data.lname} onChange={(e) => { setData(pendingData => ({ ...pendingData, lname: e.target.value })) }} />
                     This field is required
                 </div>
             </div>
 
             <div className="email">
                 <label htmlFor="email">Email Address</label>
-                <input type="email" name="email" id="email" />
+                <input type="email" name="email" id="email" value={data.email} onChange={(e) => { setData(pendingData => ({ ...pendingData, email: e.target.value })) }} />
                 Please enter a valid email address
                 This field is required
             </div>
@@ -29,11 +39,11 @@ export default function ContactForm() {
                 <label htmlFor="query_type">Query Type</label>
                 <div className="d-sm-flex gap-3">
                     <div className="radio-btn w-100 border border-dark p-2 my-1">
-                        <input type="radio" name="query_type" id="general_query" />
+                        <input type="radio" name="query_type" id="general_query" value="General Enquiry" onChange={(e) => { setData(pendingData => ({ ...pendingData, qtype: e.target.value })) }} />
                         <label htmlFor="general_query">General Enquiry</label>
                     </div>
                     <div className="radio-btn w-100 border border-dark p-2 my-1">
-                        <input type="radio" name="query_type" id="support_query" />
+                        <input type="radio" name="query_type" id="support_query" value="Support Request" onChange={(e) => { setData(pendingData => ({ ...pendingData, qtype: e.target.value })) }} />
                         <label htmlFor="support_query">Support Request</label>
                     </div>
                 </div>
@@ -42,12 +52,12 @@ export default function ContactForm() {
 
             <div className="message">
                 <label htmlFor="message">Message</label>
-                <textarea className='w-100' name="message" id="message"></textarea>
+                <textarea className='w-100' name="message" id="message" onChange={(e) => { setData(pendingData => ({ ...pendingData, message: e.target.value })) }}></textarea>
                 This field is required
             </div>
 
             <div className="consent">
-                <input type="checkbox" name="consent" id="consent" />
+                <input type="checkbox" name="consent" id="consent" checked={data.consent} onChange={() => { setData(pendingData => ({ ...pendingData, consent: !pendingData.consent })) }} />
                 <label htmlFor="consent">I consent to being contacted by the team</label>
                 To submit this form, please consent to being contacted
             </div>

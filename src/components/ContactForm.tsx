@@ -17,7 +17,7 @@ export default function ContactForm() {
 
       <div className="fullname d-sm-flex gap-3">
         <div className="fname">
-          <label htmlFor="fname">First Name</label>
+          <label htmlFor="fname" className="required">First Name</label>
           <input
             type="text"
             name="fname"
@@ -33,7 +33,7 @@ export default function ContactForm() {
           This field is required
         </div>
         <div className="lname">
-          <label htmlFor="lname">Last Name</label>
+          <label htmlFor="lname" className="required">Last Name</label>
           <input
             type="text"
             name="lname"
@@ -51,7 +51,7 @@ export default function ContactForm() {
       </div>
 
       <div className="email">
-        <label htmlFor="email">Email Address</label>
+        <label htmlFor="email" className="required">Email Address</label>
         <input
           type="email"
           name="email"
@@ -68,7 +68,7 @@ export default function ContactForm() {
       </div>
 
       <div className="query-type">
-        <label htmlFor="query_type">Query Type</label>
+        <label htmlFor="query_type" className="required">Query Type</label>
         <div className="d-sm-flex gap-3">
           <div className="radio-btn w-100 border border-dark p-2 my-1">
             <input
@@ -105,7 +105,7 @@ export default function ContactForm() {
       </div>
 
       <div className="message">
-        <label htmlFor="message">Message</label>
+        <label htmlFor="message" className="required">Message</label>
         <textarea
           className="w-100"
           name="message"
@@ -133,7 +133,7 @@ export default function ContactForm() {
             }));
           }}
         />
-        <label htmlFor="consent">
+        <label htmlFor="consent" className="required">
           I consent to being contacted by the team
         </label>
         To submit this form, please consent to being contacted

@@ -1,4 +1,5 @@
 import SuccessMessage from "./SuccessMessage";
+import checkbox from "../assets/images/icon-checkbox-check.svg"
 import { useState } from "react";
 
 function validateEmail(email: string): boolean {
@@ -174,25 +175,28 @@ export default function ContactForm() {
         <p className="error">{messages.message}</p>
       </div>
 
-      <div className="consent">
-        <input
-          type="checkbox"
-          name="consent"
-          id="consent"
-          checked={data.consent}
-          className="me-1 align-middle"
-          onChange={() => {
-            setData((pendingData) => ({
-              ...pendingData,
-              consent: !pendingData.consent,
-            }));
-          }}
-        />
-        <label htmlFor="consent" className="required">
+      <div className="consent d-flex d-sm-block">
+        <div className="checkmark d-inline-block">
+          { data.consent && <img src={checkbox} alt="checked" className="checkbox" />}
+          <input
+            type="checkbox"
+            name="consent"
+            id="consent"
+            checked={data.consent}
+            className="me-1"
+            onChange={() => {
+              setData((pendingData) => ({
+                ...pendingData,
+                consent: !pendingData.consent,
+              }));
+            }}
+          />
+        </div>
+        <label htmlFor="consent" className="required ms-4">
           I consent to being contacted by the team
         </label>
-        <p className="error">{messages.consent}</p>
       </div>
+      <p className="error">{messages.consent}</p>
 
       <button className="btn w-100" onClick={sumbitForm} disabled={successMessage}>Submit</button>
 

@@ -64,6 +64,36 @@ p.error {
   font-weight: 700;
 }
 
+.consent {
+  position: relative;
+}
+
+.checkmark,
+.checkbox,
+input[type=checkbox] {
+  width: 1em;
+  height: 1em;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+input[type=checkbox] {
+  z-index: 2;
+  opacity: 0;
+}
+
+.checkmark {
+  border: 1px solid black;
+  border-radius: 2px;
+}
+
+.checkbox {
+  z-index: 1;
+  transform: translate(-1px, -50%);
+}
+
 .contact-form .btn {
   background-color: hsl(169, 82%, 27%);
   color: hsl(0, 0%, 100%);

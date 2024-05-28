@@ -26,14 +26,19 @@ label.required::after {
   margin-left: 0.25em;
 }
 
-input[type=text],
-input[type=email] {
-  width: 100%;
-  padding: 0.4em 0.5em;
-}
-
 textarea {
   resize: none;
+}
+
+textarea,
+.radio-btn,
+input[type=text],
+input[type=email] {
+  border-radius: 0.5em;
+  border: 1px solid hsl(186, 15%, 59%);
+  width: 100%;
+  padding: 0.5em 1em;
+  outline: none;
 }
 
 /* Contact Form */

@@ -70,7 +70,7 @@ export default function ContactForm() {
       <div className="query-type">
         <label htmlFor="query_type" className="required">Query Type</label>
         <div className="d-sm-flex gap-3">
-          <div className="radio-btn w-100 border border-dark p-2 my-1">
+          <div className="radio-btn w-100 my-1">
             <input
               type="radio"
               name="query_type"
@@ -85,7 +85,7 @@ export default function ContactForm() {
             />
             <label htmlFor="general_query">General Enquiry</label>
           </div>
-          <div className="radio-btn w-100 border border-dark p-2 my-1">
+          <div className="radio-btn w-100 my-1">
             <input
               type="radio"
               name="query_type"

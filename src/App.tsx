@@ -7,7 +7,7 @@ function App() {
     <>
       <ContactForm />
 
-      <div className="attribution">
+      <div className="attribution mt-1">
         Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
         Coded by <a href="#">Husam</a>.
       </div>

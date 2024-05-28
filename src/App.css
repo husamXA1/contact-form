@@ -28,6 +28,7 @@ label.required::after {
 
 textarea {
   resize: none;
+  height: 100px;
 }
 
 textarea,

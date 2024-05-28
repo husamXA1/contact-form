@@ -117,6 +117,7 @@ export default function ContactForm() {
               name="query_type"
               id="general_query"
               value="General Enquiry"
+              className="me-1 align-middle"
               onChange={(e) => {
                 setData((pendingData) => ({
                   ...pendingData,
@@ -132,6 +133,7 @@ export default function ContactForm() {
               name="query_type"
               id="support_query"
               value="Support Request"
+              className="me-1 align-middle"
               onChange={(e) => {
                 setData((pendingData) => ({
                   ...pendingData,
@@ -167,6 +169,7 @@ export default function ContactForm() {
           name="consent"
           id="consent"
           checked={data.consent}
+          className="me-1 align-middle"
           onChange={() => {
             setData((pendingData) => ({
               ...pendingData,

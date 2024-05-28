@@ -1,4 +1,3 @@
-Fix the margins and paddings.
 Handle success message.
 Style hover and active states.
 Handle accessibility with keyboard only.

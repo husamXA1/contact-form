@@ -55,7 +55,7 @@ export default function ContactForm() {
       }
     }
     setSuccessMessage(tmpSuccessMessage)
-    setTimeout(() => {setSuccessMessage(false)}, 5000)
+    setTimeout(() => {setSuccessMessage(false)}, 10000)
 
     setMessages(tmpMessages)
   }

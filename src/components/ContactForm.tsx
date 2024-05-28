@@ -1,6 +1,11 @@
 import SuccessMessage from "./SuccessMessage";
 import { useState } from "react";
 
+function validateEmail(email: string): boolean {
+  const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  return emailRegex.test(email);
+}
+
 export default function ContactForm() {
   const [data, setData] = useState({
     fname: "",
@@ -11,18 +16,52 @@ export default function ContactForm() {
     consent: false,
   });
 
+  const [messages, setMessages] = useState({
+    fname: "",
+    lname: "",
+    email: "",
+    qtype: "",
+    message: "",
+    consent: "",
+  })
+
+  function sumbitForm(): void {
+    let tmpMessages = {
+      fname: "",
+      lname: "",
+      email: "",
+      qtype: "",
+      message: "",
+      consent: "",
+    }
+    tmpMessages.fname = data.fname? "" : "This field is required"
+    tmpMessages.lname = data.lname? "" : "This field is required"
+    
+    if (data.email) {
+      tmpMessages.email = validateEmail(data.email)? "" : "Please enter a vaild email address"
+    } else {
+      tmpMessages.email = "This field is required"
+    }
+    tmpMessages.qtype = data.qtype? "" : "Please select a query type"
+    tmpMessages.message = data.message? "" : "This field is required"
+    tmpMessages.consent = data.consent? "" : "To submit this form, please consent to being contacted"
+
+    setMessages(tmpMessages)
+  }
+
   return (
     <div className="contact-form container p-4 rounded-4 my-5">
       <h2>Contact Us</h2>
 
       <div className="fullname d-sm-flex gap-3">
-        <div className="fname">
+        <div className="fname w-100">
           <label htmlFor="fname" className="required">First Name</label>
           <input
             type="text"
             name="fname"
             id="fname"
             value={data.fname}
+            className={`${messages.fname && "error"}`}
             onChange={(e) => {
               setData((pendingData) => ({
                 ...pendingData,
@@ -30,15 +69,16 @@ export default function ContactForm() {
               }));
             }}
           />
-          This field is required
+          <p className="error">{messages.fname}</p>
         </div>
-        <div className="lname">
+        <div className="lname w-100">
           <label htmlFor="lname" className="required">Last Name</label>
           <input
             type="text"
             name="lname"
             id="lname"
             value={data.lname}
+            className={`${messages.lname && "error"}`}
             onChange={(e) => {
               setData((pendingData) => ({
                 ...pendingData,
@@ -46,7 +86,7 @@ export default function ContactForm() {
               }));
             }}
           />
-          This field is required
+          <p className="error">{messages.lname}</p>
         </div>
       </div>
 
@@ -57,6 +97,7 @@ export default function ContactForm() {
           name="email"
           id="email"
           value={data.email}
+          className={`${messages.email && "error"}`}
           onChange={(e) => {
             setData((pendingData) => ({
               ...pendingData,
@@ -64,7 +105,7 @@ export default function ContactForm() {
             }));
           }}
         />
-        Please enter a valid email address This field is required
+        <p className="error">{messages.email}</p>
       </div>
 
       <div className="query-type">
@@ -101,15 +142,15 @@ export default function ContactForm() {
             <label htmlFor="support_query">Support Request</label>
           </div>
         </div>
-        Please select a query type
+        <p className="error">{messages.qtype}</p>
       </div>
 
       <div className="message">
         <label htmlFor="message" className="required">Message</label>
         <textarea
-          className="w-100"
           name="message"
           id="message"
+          className={`${messages.message && "error"}`}
           onChange={(e) => {
             setData((pendingData) => ({
               ...pendingData,
@@ -117,7 +158,7 @@ export default function ContactForm() {
             }));
           }}
         ></textarea>
-        This field is required
+        <p className="error">{messages.message}</p>
       </div>
 
       <div className="consent">
@@ -136,10 +177,10 @@ export default function ContactForm() {
         <label htmlFor="consent" className="required">
           I consent to being contacted by the team
         </label>
-        To submit this form, please consent to being contacted
+        <p className="error">{messages.consent}</p>
       </div>
 
-      <button className="btn w-100">Submit</button>
+      <button className="btn w-100" onClick={sumbitForm}>Submit</button>
 
       {false && <SuccessMessage />}
     </div>

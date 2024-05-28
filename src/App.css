@@ -41,6 +41,15 @@ input[type=email] {
   outline: none;
 }
 
+input.error,
+textarea.error {
+  border-color: hsl(0, 66%, 56%);
+}
+
+p.error {
+  color: hsl(0, 66%, 56%);
+}
+
 /* Contact Form */
 .contact-form {
   width: 90%;

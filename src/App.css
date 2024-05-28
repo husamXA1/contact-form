@@ -67,6 +67,23 @@ p.error {
   color: hsl(0, 0%, 100%);
 }
 
+.success-message {
+  position: fixed;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: hsl(187, 24%, 22%);
+  color: hsl(0, 0%, 100%);
+  padding: 1.5em 2em;
+  border-radius: 1em;
+  transition: opacity 0.5s;
+  opacity: 0;
+}
+
+.success-message.on {
+  opacity: 1;
+}
+
 /* Attribution */
 .attribution {
   font-size: 11px;

@@ -25,6 +25,8 @@ export default function ContactForm() {
     consent: "",
   })
 
+  const [successMessage, setSuccessMessage] = useState(false)
+
   function sumbitForm(): void {
     let tmpMessages = {
       fname: "",
@@ -45,6 +47,15 @@ export default function ContactForm() {
     tmpMessages.qtype = data.qtype? "" : "Please select a query type"
     tmpMessages.message = data.message? "" : "This field is required"
     tmpMessages.consent = data.consent? "" : "To submit this form, please consent to being contacted"
+
+    let tmpSuccessMessage = true
+    for (const value of Object.values(tmpMessages)) {
+      if (value) {
+        tmpSuccessMessage = false
+      }
+    }
+    setSuccessMessage(tmpSuccessMessage)
+    setTimeout(() => {setSuccessMessage(false)}, 5000)
 
     setMessages(tmpMessages)
   }
@@ -183,9 +194,9 @@ export default function ContactForm() {
         <p className="error">{messages.consent}</p>
       </div>
 
-      <button className="btn w-100" onClick={sumbitForm}>Submit</button>
+      <button className="btn w-100" onClick={sumbitForm} disabled={successMessage}>Submit</button>
 
-      {false && <SuccessMessage />}
+      <SuccessMessage show={successMessage}/>
     </div>
   );
 }

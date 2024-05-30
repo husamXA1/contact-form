@@ -199,7 +199,7 @@ export default function ContactForm() {
             }}
           />
         </div>
-        <label htmlFor="consent" className="required ms-4">
+        <label htmlFor="consent" className="required ms-4 consent-label">
           I consent to being contacted by the team
         </label>
       </div>

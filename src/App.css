@@ -64,6 +64,40 @@ p.error {
   font-weight: 700;
 }
 
+.radio-btn {
+  position: relative;
+  padding-left: calc(2em + 5px);
+}
+
+.radio-select,
+.radio-icon,
+input[type=radio] {
+  width: 1em;
+  height: 1em;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.radio-select {
+  border: 1px solid hsl(186, 15%, 59%);
+  border-radius: 100%;
+  left: 1em;
+}
+
+.radio-icon {
+  z-index: 1;
+  width: calc(1em + 2px);
+  height: calc(1em + 2px);
+  transform: translate(-2px, -50%);
+}
+
+input[type=radio] {
+  z-index: 2;
+  opacity: 0;
+}
+
 .consent {
   position: relative;
 }

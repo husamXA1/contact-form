@@ -1,5 +1,6 @@
 import SuccessMessage from "./SuccessMessage";
 import checkbox from "../assets/images/icon-checkbox-check.svg"
+import radiobtn from "../assets/images/icon-radio-selected.svg"
 import { useState } from "react";
 
 function validateEmail(email: string): boolean {
@@ -123,36 +124,42 @@ export default function ContactForm() {
       <div className="query-type">
         <label htmlFor="query_type" className="required">Query Type</label>
         <div className="d-sm-flex gap-3">
-          <div className="radio-btn w-100 my-1">
-            <input
-              type="radio"
-              name="query_type"
-              id="general_query"
-              value="General Enquiry"
-              className="me-1 align-middle"
-              onChange={(e) => {
-                setData((pendingData) => ({
-                  ...pendingData,
-                  qtype: e.target.value,
-                }));
-              }}
-            />
+          <div className="radio-btn w-100 my-1 d-flex">
+            <div className="radio-select">
+              { data.qtype == "General Enquiry" && <img src={radiobtn} alt="radio-btn" className="radio-icon" /> }
+              <input
+                type="radio"
+                name="query_type"
+                id="general_query"
+                value="General Enquiry"
+                className="me-1 align-middle"
+                onChange={(e) => {
+                  setData((pendingData) => ({
+                    ...pendingData,
+                    qtype: e.target.value,
+                  }));
+                }}
+              />
+            </div>
             <label htmlFor="general_query">General Enquiry</label>
           </div>
-          <div className="radio-btn w-100 my-1">
-            <input
-              type="radio"
-              name="query_type"
-              id="support_query"
-              value="Support Request"
-              className="me-1 align-middle"
-              onChange={(e) => {
-                setData((pendingData) => ({
-                  ...pendingData,
-                  qtype: e.target.value,
-                }));
-              }}
-            />
+          <div className="radio-btn w-100 my-1 d-flex">
+            <div className="radio-select">
+              { data.qtype == "Support Request" && <img src={radiobtn} alt="radio-btn" className="radio-icon" /> }
+              <input
+                type="radio"
+                name="query_type"
+                id="support_query"
+                value="Support Request"
+                className="me-1 align-middle"
+                onChange={(e) => {
+                  setData((pendingData) => ({
+                    ...pendingData,
+                    qtype: e.target.value,
+                  }));
+                }}
+              />
+            </div>
             <label htmlFor="support_query">Support Request</label>
           </div>
         </div>

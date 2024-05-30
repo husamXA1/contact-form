@@ -1,4 +1,5 @@
-Handle accessibility with keyboard only.
 Handle accessibility for screen readers.
-Refactor form data state handling
 Fix the success message responsiveness (on mobile)
+
+probably won't:
+- Refactor form data state handling

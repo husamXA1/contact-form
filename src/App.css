@@ -42,6 +42,14 @@ input[type=email] {
   outline: none;
 }
 
+textarea:hover,
+.radio-btn:hover,
+input[type=text]:hover,
+input[type=email]:hover {
+  border-color: hsl(169, 82%, 27%);
+  cursor: pointer;
+}
+
 input.error,
 textarea.error {
   border-color: hsl(0, 66%, 56%);
@@ -69,15 +77,26 @@ p.error {
   padding-left: calc(2em + 5px);
 }
 
+.radio-btn * {
+  cursor: pointer;
+}
+
 .radio-select,
-.radio-icon,
-input[type=radio] {
+.radio-icon {
   width: 1em;
   height: 1em;
   position: absolute;
   top: 50%;
   left: 0;
   transform: translateY(-50%);
+}
+
+input[type=radio] {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
 }
 
 .radio-select {

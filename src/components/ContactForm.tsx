@@ -127,7 +127,8 @@ export default function ContactForm() {
           <div className="radio-btn w-100 my-1 d-flex">
             <div className="radio-select">
               { data.qtype == "General Enquiry" && <img src={radiobtn} alt="radio-btn" className="radio-icon" /> }
-              <input
+            </div>
+            <input
                 type="radio"
                 name="query_type"
                 id="general_query"
@@ -140,13 +141,13 @@ export default function ContactForm() {
                   }));
                 }}
               />
-            </div>
             <label htmlFor="general_query">General Enquiry</label>
           </div>
           <div className="radio-btn w-100 my-1 d-flex">
             <div className="radio-select">
               { data.qtype == "Support Request" && <img src={radiobtn} alt="radio-btn" className="radio-icon" /> }
-              <input
+            </div>
+            <input
                 type="radio"
                 name="query_type"
                 id="support_query"
@@ -159,7 +160,6 @@ export default function ContactForm() {
                   }));
                 }}
               />
-            </div>
             <label htmlFor="support_query">Support Request</label>
           </div>
         </div>

@@ -178,7 +178,6 @@ input[type=checkbox] {
 
 .success-message {
   position: fixed;
-  height: 150px;
   top: -150px;
   left: 50%;
   transform: translateX(-50%);
@@ -187,6 +186,9 @@ input[type=checkbox] {
   padding: 1.5em 2em;
   border-radius: 1em;
   transition: transform 0.5s;
+  width: 90%;
+  max-width: 500px;
+  height: 150px;
 }
 
 .success-message.on {

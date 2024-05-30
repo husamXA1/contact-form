@@ -1,5 +1,4 @@
 Handle accessibility for screen readers.
-Fix the success message responsiveness (on mobile)
 
 probably won't:
 - Refactor form data state handling
